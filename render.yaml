@@ -1,0 +1,38 @@
+# Render 部署蓝图（https://render.com）
+#
+# 用法：把仓库推到 GitHub → Render 新建 Blueprint → 选中本仓库 → 填 QA_LLM_API_KEY → 部署
+# 免费层会在 15 分钟无访问后休眠，首次访问需等待约 30 秒唤醒。
+
+services:
+  - type: web
+    name: campus-qa
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      # ── 大模型（必填 Key）──────────────────────────
+      - key: QA_LLM_ENABLED
+        value: "true"
+      - key: QA_LLM_BASE_URL
+        value: "https://open.bigmodel.cn/api/paas/v4"
+      - key: QA_LLM_MODEL
+        value: "glm-4-flash"
+      - key: QA_LLM_API_KEY
+        sync: false          # 部署时在面板手填，不写进仓库
+      # ── 访问保护 ──────────────────────────────────
+      - key: QA_LIMIT_PER_MIN
+        value: "10"
+      - key: QA_LIMIT_DAY_IP
+        value: "30"
+      - key: QA_LIMIT_DAY_GLOBAL
+        value: "600"
+      # ── 站点信息 ──────────────────────────────────
+      - key: QA_CAMPUS_NAME
+        value: "示例大学"
+      - key: QA_PROMPT_VERSION
+        value: "v3"
+      - key: PORT
+        value: "8080"

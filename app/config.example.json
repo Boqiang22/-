@@ -1,0 +1,21 @@
+{
+  "_说明": "复制本文件为 config.json 后按需修改。也可全部用环境变量注入（优先级更高）。",
+  "host": "127.0.0.1",
+  "port": 7788,
+  "topK": 4,
+  "minScore": 2.2,
+  "confidenceHigh": 0.55,
+  "confidenceMid": 0.32,
+  "campusName": "示例大学",
+  "demoBanner": true,
+  "promptVersion": "",
+  "llm": {
+    "enabled": false,
+    "baseUrl": "https://api.deepseek.com/v1",
+    "apiKey": "",
+    "model": "deepseek-chat",
+    "temperature": 0.2,
+    "maxTokens": 700,
+    "timeoutMs": 30000
+  }
+}

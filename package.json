@@ -1,0 +1,21 @@
+{
+  "name": "campus-qa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "校园通 CampusQA —— 可溯源的校园事务智能问答系统（零依赖）",
+  "type": "module",
+  "main": "app/server.mjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node app/server.mjs",
+    "dev": "node app/server.mjs",
+    "eval": "node tools/eval.mjs",
+    "smoke": "node tools/smoke.mjs",
+    "ab": "node tools/prompt-ab.mjs"
+  },
+  "dependencies": {},
+  "keywords": ["campus", "qa", "rag", "retrieval", "education"],
+  "license": "MIT"
+}

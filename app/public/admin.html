@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>运营看板 · 校园通</title>
+<link rel="icon" href="/assets/logo.svg" />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<div class="board">
+  <h1>运营看板</h1>
+  <p class="board__sub">用于查看服务运行状态、未答问题（badcase 池）与用户反馈，是知识库迭代的依据。</p>
+
+  <div class="card-grid" id="cards"></div>
+
+  <div class="panel">
+    <h2>未答问题 Top（资料缺口）</h2>
+    <div id="unanswered"></div>
+  </div>
+
+  <div class="panel">
+    <h2>最近提问</h2>
+    <div id="recent"></div>
+  </div>
+
+  <div class="panel">
+    <h2>知识库与提示词</h2>
+    <div id="kbInfo"></div>
+  </div>
+
+  <p style="font-size:12px;color:var(--muted)">
+    <a href="/" class="ghost-link" style="display:inline">← 返回问答界面</a>
+  </p>
+</div>
+
+<script src="/admin.js" type="module"></script>
+</body>
+</html>

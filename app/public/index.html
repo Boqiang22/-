@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="校园通：面向新生的校园事务智能问答助手，回答可溯源" />
+<title>校园通 · 校园事务问答助手</title>
+<link rel="icon" href="/assets/logo.svg" />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- 侧栏 -->
+  <aside class="sidebar" id="sidebar" aria-label="知识库导航">
+    <div class="brand">
+      <img src="/assets/logo.svg" alt="" class="brand__logo" />
+      <div>
+        <div class="brand__name">校园通</div>
+        <div class="brand__sub">CampusQA · 事务问答</div>
+      </div>
+      <button class="icon-btn sidebar__close" id="sidebarClose" aria-label="关闭侧栏">✕</button>
+    </div>
+
+    <div class="mode-card" id="modeCard">
+      <span class="dot" id="modeDot"></span>
+      <div>
+        <div class="mode-card__title" id="modeTitle">检测中…</div>
+        <div class="mode-card__desc" id="modeDesc">正在读取运行模式</div>
+      </div>
+    </div>
+
+    <div class="kb-search">
+      <input type="search" id="kbFilter" placeholder="筛选知识库条目…" aria-label="筛选知识库" />
+    </div>
+
+    <nav class="kb-list" id="kbList" aria-label="知识库条目"></nav>
+
+    <div class="sidebar__foot">
+      <a href="/admin" class="ghost-link">运营看板</a>
+      <button class="ghost-link" id="btnNewChat">开始新对话</button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <!-- 主区 -->
+  <main class="main">
+
+    <header class="topbar">
+      <button class="icon-btn topbar__menu" id="sidebarOpen" aria-label="打开侧栏">☰</button>
+      <div class="topbar__title">
+        <h1>校园事务问答</h1>
+        <p id="topbarSub">回答只来自校内资料，每条结论都带出处</p>
+      </div>
+      <div class="topbar__meta">
+        <span class="pill" id="pillKb">— 条资料</span>
+        <span class="pill pill--quiet" id="pillMode">—</span>
+      </div>
+    </header>
+
+    <div class="banner" id="banner" hidden>
+      <strong>示例数据提示</strong>
+      <span id="bannerText">当前知识库为课程演示用示例，金额与时间不代表任何真实学校的正式规定。</span>
+      <button class="banner__x" id="bannerX" aria-label="关闭提示">✕</button>
+    </div>
+
+    <section class="chat" id="chat" aria-live="polite" aria-label="对话区">
+      <div class="empty" id="empty">
+        <img src="/assets/logo.svg" alt="" class="empty__art" />
+        <h2>有什么校园事务想问？</h2>
+        <p>报到、宿舍、选课、成绩、奖助学金、图书馆、网络、请假、就业……资料里写了的，我给答案并标出处；资料里没写的，我直接说没有。</p>
+        <div class="chips" id="chips"></div>
+      </div>
+    </section>
+
+    <footer class="composer">
+      <form class="composer__box" id="form" autocomplete="off">
+        <textarea id="input" rows="1" placeholder="比如：宿舍水管漏水找谁报修？" aria-label="输入你的问题"></textarea>
+        <button type="submit" class="send" id="send" aria-label="发送">发送</button>
+      </form>
+      <div class="composer__hint">
+        <span>Enter 发送 · Shift + Enter 换行</span>
+        <span id="charCount"></span>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/app.js" type="module"></script>
+</body>
+</html>

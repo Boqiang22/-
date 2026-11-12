@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="校园通标志">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#25785f"/>
+      <stop offset="100%" stop-color="#154a3d"/>
+    </linearGradient>
+  </defs>
+  <!-- 人工绘制占位标识：AI 生图版本待替换 assets/logo.png 时同步更新此处注释 -->
+  <rect width="64" height="64" rx="16" fill="url(#g)"/>
+  <!-- 对话气泡 + 书页 -->
+  <path d="M15 20.5A3.5 3.5 0 0 1 18.5 17h27A3.5 3.5 0 0 1 49 20.5v17A3.5 3.5 0 0 1 45.5 41H29l-9.5 7v-7h-1A3.5 3.5 0 0 1 15 37.5v-17Z" fill="#f7f4ea"/>
+  <path d="M23 26h18M23 31.5h12" stroke="#1f6f5c" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="43.5" cy="31.5" r="2.2" fill="#a9661a"/>
+</svg>
